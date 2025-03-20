@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    color: #fff5f5;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #302f4d; /* Fondo en tono pastel oscuro */
+    /* padding-top: -30; */
+    position: relative;
+}
+
+/* Estilos para el botón de música en la esquina superior derecha */
+.music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#musicButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFE5B4; /* Tono pastel amarillo */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(255, 229, 180, 0.7);
+    transition: all 0.3s ease;
+}
+
+#musicButton:hover {
+    transform: scale(1.1);
+    background-color: #a698e8; /* Azul pastel */
+}
+
+#musicButton.active {
+    background-color: #a7e9af; /* Verde pastel */
+    animation: pulse 1.5s infinite;
+}
+
+.music-icon {
+    font-size: 24px;
+    color: #302f4d;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 229, 180, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(167, 233, 175, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 229, 180, 0.7);
+    }
+}
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+.botones a{
+    background-color: #a698e8; /* Azul pastel */
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+
+}
+
+.botones a:focus{
+    background-color: #a7e9af; /* Verde pastel */
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff5f5;
+        text-shadow: 0 0 12px #a0e6ff, 0 0 50px #a0e6ff, 0 0 100px #a0e6ff; /* Azul pastel */
+    }
+    10%, 90%{
+        color: #0a0c0a;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button a{
+        font-size: 1rem;
+    }
+}

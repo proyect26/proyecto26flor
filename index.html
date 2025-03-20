@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
+</head>
+
+<body>
+    <!-- Botón de música en la esquina superior derecha -->
+    <div class="music-button" id="musicButtonContainer">
+        <button id="musicButton">
+            <span class="music-icon">♪</span>
+        </button>
+    </div>
+
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
+    </div>
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI :)</span>
+    </div>
+    <div class="button">
+        <button class="botones" id="playButton">
+            <a href="flower.html" style="color: #fff;">CLICK AQUÍ</a>
+        </button>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="sound/ChristianBasso&HaienQiu-Flowers.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Reproducir música al hacer clic en el botón principal
+        document.getElementById('playButton').addEventListener('click', function() {
+        var audio = document.getElementById('backgroundMusic');
+        audio.play().catch(function(error) {
+            alert("No se pudo reproducir la música: " + error.message);
+        });
+
+        });
+
+        // Reproducir música al hacer clic en el botón de música
+        document.getElementById('musicButton').addEventListener('click', function() {
+            var audio = document.getElementById('backgroundMusic');
+            if (audio.paused) {
+                audio.play();
+                this.classList.add('active');
+            } else {
+                audio.pause();
+                this.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
